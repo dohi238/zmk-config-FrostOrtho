@@ -23,10 +23,14 @@
     // キー入力後400ms以内はAMLに切り替わらない
     require-prior-idle-ms = <400>;
     // AMLから離脱しないキー
-    excluded-positions = <
-        6 // U 左クリック
-        7 // I 右クリック
-        8 // O 中央クリック
+    excluded-positions = 
+        //(修正st_20260612)
+        //6 // U 左クリック
+        //7 // I 右クリック
+        //8 // O 中央クリック 
+        //(修正ed_20260612)
+        16 // J 左クリック
+        17 // K 右クリック
         20 // Z Shift
         30 // Control
         32 // Alt
@@ -74,7 +78,8 @@
         layers = <5>; // 縦スクロールレイヤー
         input-processors = <
             // &scroll_runtime_input_processor
-            &zip_scroll_transform (INPUT_TRANSFORM_X_INVERT) // スクロール方向調整
+            //&zip_scroll_transform (INPUT_TRANSFORM_X_INVERT) // スクロール方向調整
+            &zip_scroll_transform (INPUT_TRANSFORM_Y_INVERT) // スクロール方向調整(逆に変更_20260612)
             &zip_xy_to_scroll_mapper
             &zip_scroll_x_scaler 0 3 // X軸スクロール量0/3倍
             &zip_scroll_y_scaler 2 3 // Y軸スクロール量2/3倍
