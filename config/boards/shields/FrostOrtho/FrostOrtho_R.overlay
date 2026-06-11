@@ -83,7 +83,7 @@
             &zip_xy_to_scroll_mapper
             &zip_scroll_x_scaler 0 3 // X軸スクロール量0/3倍
             //&zip_scroll_y_scaler 2 3 // Y軸スクロール量2/3倍
-            &zip_scroll_y_scaler 1 2 // Y軸スクロール量1/2倍(スクロール量を変更_20260612)
+            &zip_scroll_y_scaler 1 2 // Y軸スクロール量1/2倍(スクロール量を変更_20260612a)
         >;
     };
     scroller_x {
