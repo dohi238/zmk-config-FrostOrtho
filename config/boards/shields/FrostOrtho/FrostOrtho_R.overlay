@@ -76,16 +76,16 @@
             &zip_xy_to_scroll_mapper
             &zip_scroll_transform INPUT_TRANSFORM_Y_INVERT  // スクロール方向調整_修正
             &zip_scroll_x_scaler 0 3 // X軸スクロール量0/3倍
-            &zip_scroll_y_scaler 1 8 // Y軸スクロール量1/8倍
+            &zip_scroll_y_scaler 1 16 // Y軸スクロール量1/16倍
             // &zip_scroll_y_scaler 2 3 // Y軸スクロール量2/3倍
         >;
     };
     scroller_x {
-        layers = <5>; // 横スクロールレイヤー
+        layers = <7>; // 横スクロールレイヤー
         input-processors = <
             &zip_xy_to_scroll_mapper
             &zip_scroll_transform INPUT_TRANSFORM_Y_INVERT // スクロール方向調整
-            &zip_scroll_x_scaler 1 8 // X軸スクロール量1/8倍
+            &zip_scroll_x_scaler 1 16 // X軸スクロール量1/16倍
             &zip_scroll_y_scaler 0 3 // Y軸スクロール量0/3倍
         >;
     };
