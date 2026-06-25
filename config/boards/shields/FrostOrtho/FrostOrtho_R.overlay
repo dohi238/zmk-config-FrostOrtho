@@ -69,25 +69,16 @@
 };
 
 &trackball_listener {
-    scroller_y {
+    scroller {
         layers = <5>; // 縦スクロールレイヤー
         input-processors = <
             // &scroll_runtime_input_processor
             &zip_xy_to_scroll_mapper
             &zip_scroll_transform INPUT_TRANSFORM_Y_INVERT  // スクロール方向調整_修正
-            // &zip_scroll_x_scaler 0 3 // X軸スクロール量0/3倍
-            &zip_scroll_x_scaler 1 16 // X軸スクロール量1/16倍
-            &zip_scroll_y_scaler 1 16 // Y軸スクロール量1/16倍
-            // &zip_scroll_y_scaler 2 3 // Y軸スクロール量2/3倍
-        >;
-    };
-    scroller_x {
-        layers = <7>; // 横スクロールレイヤー
-        input-processors = <
-            &zip_xy_to_scroll_mapper
-            &zip_scroll_transform INPUT_TRANSFORM_Y_INVERT // スクロール方向調整
-            &zip_scroll_x_scaler 1 16 // X軸スクロール量1/16倍
-            &zip_scroll_y_scaler 0 3 // Y軸スクロール量0/3倍
+            // &zip_scroll_x_scaler 1 16 // X軸スクロール量1/16倍
+            // &zip_scroll_y_scaler 1 16 // Y軸スクロール量1/16倍
+            &zip_scroll_x_scaler 2 3 // X軸スクロール量2/3倍
+            &zip_scroll_y_scaler 2 3 // Y軸スクロール量2/3倍
         >;
     };
 };
