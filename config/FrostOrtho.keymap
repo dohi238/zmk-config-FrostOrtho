@@ -221,16 +221,5 @@
 
             sensor-bindings = <&rsr_vol &rsr_trans>;
         };
-
-        layer_7 {
-            bindings = <
-&trans  &trans  &trans  &trans       &trans              &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans       &trans              &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &kp LS(INS)  &trans              &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans       &trans  &trans      &trans  &trans  &trans  &trans  &trans
-            >;
-
-            sensor-bindings = <&rsr_vol &rsr_trans>;
-        };
     };
 };
