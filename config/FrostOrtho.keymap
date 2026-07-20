@@ -23,12 +23,12 @@
 
         Scroll {
             bindings = <&lt 7 A>;
-            key-positions = <16 17>;
+            key-positions = <17 18>;
         };
 
         Scroll_ui {
-            bindings = <&lt 7 A>;
-            key-positions = <6 7>;
+            bindings = <&mkp MB2>;
+            key-positions = <18 19>;
         };
     };
 
@@ -213,10 +213,10 @@
 
         MOUSE {
             bindings = <
-&trans  &trans  &trans  &trans  &trans              &trans  &mkp MB1  &mkp MB2  &mkp MB3  &trans
-&trans  &trans  &trans  &trans  &trans              &trans  &mkp MB1  &mkp MB2  &trans    &trans
-&trans  &trans  &trans  &trans  &trans              &trans  &trans    &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans    &trans    &trans    &trans
+&trans  &trans  &trans  &trans  &trans              &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans              &trans  &trans  &trans  &trans  &mkp MB1
+&trans  &trans  &trans  &trans  &trans              &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans
             >;
 
             sensor-bindings = <&rsr_vol &rsr_trans>;
