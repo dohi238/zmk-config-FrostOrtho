@@ -13,12 +13,6 @@
     quick-tap-ms = <0>;
 };
 
-&lt {
-    flavor = "tap-preferred";
-    tapping-term-ms = <200>;
-    quick-tap-ms = <175>;
-};
-
 // AML クリックしたときにタイムアウトを延長
 
 &mkp_input_listener { input-processors = <&zip_temp_layer 8 10000>; };
@@ -32,7 +26,7 @@
             key-positions = <17 18>;
         };
 
-        Scroll_ui {
+        Right_Click {
             bindings = <&mkp MB2>;
             key-positions = <18 19>;
         };
