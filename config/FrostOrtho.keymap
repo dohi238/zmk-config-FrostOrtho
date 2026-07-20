@@ -169,10 +169,10 @@
 
         Move {
             bindings = <
-&trans    &trans   &trans       &trans         &trans                  &trans     &kp LC(LEFT_ARROW)  &kp UP_ARROW    &kp RC(RIGHT_ARROW)   &trans
-&kp HOME  &kp END  &kp PAGE_UP  &kp PAGE_DOWN  &trans                  &kp LC(A)  &kp LEFT_ARROW      &kp DOWN_ARROW  &kp RIGHT_ARROW       &kp LC(E)
-&trans    &trans   &trans       &trans         &trans                  &trans     &kp LG(LEFT_ARROW)  &trans          &kp RG(RIGHT_ARROW)   &trans
-&trans    &trans   &trans       &trans         &trans  &kp DELETE      &trans     &trans              &trans          &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC
+&trans    &trans   &trans       &trans         &trans                  &trans     &kp LC(LEFT_ARROW)  &kp UP_ARROW          &kp RC(RIGHT_ARROW)   &trans
+&kp HOME  &kp END  &kp PAGE_UP  &kp PAGE_DOWN  &trans                  &kp LC(A)  &kp LEFT_ARROW      &kp DOWN_ARROW        &kp RIGHT_ARROW       &kp LC(E)
+&trans    &trans   &trans       &trans         &trans                  &kp RG(Q)  &kp LG(LEFT_ARROW)  &kp RS(RG(NUMBER_3))  &kp RG(RIGHT_ARROW)   &trans
+&trans    &trans   &trans       &trans         &trans  &kp DELETE      &trans     &trans              &trans                &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC
             >;
 
             sensor-bindings = <&rsr_vol &rsr_trans>;
@@ -180,10 +180,10 @@
 
         Move_Win {
             bindings = <
-&trans    &trans   &trans       &trans         &trans                  &trans    &kp LC(LG(LEFT_ARROW))  &kp UP_ARROW    &kp RC(RG(RIGHT_ARROW))  &trans
-&kp HOME  &kp END  &kp PAGE_UP  &kp PAGE_DOWN  &trans                  &kp HOME  &kp LEFT_ARROW          &kp DOWN_ARROW  &kp RIGHT_ARROW          &kp END
-&trans    &trans   &trans       &trans         &trans                  &trans    &kp LA(LEFT_ARROW)      &trans          &kp RA(RIGHT_ARROW)      &trans
-&trans    &trans   &trans       &trans         &trans  &kp DELETE      &trans    &trans                  &trans          &kp C_BRIGHTNESS_DEC     &kp C_BRIGHTNESS_INC
+&trans    &trans   &trans       &trans         &trans                  &trans      &kp LC(LG(LEFT_ARROW))  &kp UP_ARROW    &kp RC(RG(RIGHT_ARROW))  &trans
+&kp HOME  &kp END  &kp PAGE_UP  &kp PAGE_DOWN  &trans                  &kp HOME    &kp LEFT_ARROW          &kp DOWN_ARROW  &kp RIGHT_ARROW          &kp END
+&trans    &trans   &trans       &trans         &trans                  &kp RA(F4)  &kp LA(LEFT_ARROW)      &kp RG(RS(S))   &kp RA(RIGHT_ARROW)      &trans
+&trans    &trans   &trans       &trans         &trans  &kp DELETE      &trans      &trans                  &trans          &kp C_BRIGHTNESS_DEC     &kp C_BRIGHTNESS_INC
             >;
 
             sensor-bindings = <&rsr_vol &rsr_trans>;
