@@ -32,6 +32,43 @@
 
 &mkp_input_listener { input-processors = <&zip_temp_layer L_MOUSE 10000>; };
 
+// The physical trackball has a separate listener from mouse-button events.
+// FrostOrtho_R.overlay is included before this keymap; override its layer IDs.
+#if defined(CONFIG_SHIELD_FROSTORTHO_R) || defined(CONFIG_SHIELD_FrostOrtho_R)
+#include <dt-bindings/zmk/input_transform.h>
+
+&trackball_listener {
+    input-processors = <
+        &mouse_runtime_input_processor
+        &zip_temp_layer L_MOUSE 10000
+        &zip_xy_scaler 2 3
+        &zip_xy_transform INPUT_TRANSFORM_X_INVERT
+        &zip_xy_transform INPUT_TRANSFORM_Y_INVERT
+    >;
+
+    // This keymap has one Scroll layer: vertical scrolling.
+    // Remove the old horizontal override so Setting cannot trigger scrolling.
+    /delete-node/ scroller_x;
+    scroller_y {
+        layers = <L_SCROLL>;
+        /delete-property/ process-next;
+        input-processors = <
+            &zip_xy_to_scroll_mapper
+            &zip_scroll_transform INPUT_TRANSFORM_X_INVERT
+            &zip_scroll_x_scaler 0 3
+            &zip_scroll_y_scaler 2 3
+        >;
+    };
+};
+#endif
+
+// Position 19 is this keymap's left button; 17+18 / 18+19 are combos.
+// Keep AML active while clicking/dragging or holding the combo keys.
+&zip_temp_layer {
+    excluded-positions = <17 18 19 20 29 30 31 32>;
+};
+
+
 / {
     combos {
         compatible = "zmk,combos";
