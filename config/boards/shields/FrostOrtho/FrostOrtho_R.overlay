@@ -24,10 +24,9 @@
     require-prior-idle-ms = <400>;
     // AMLから離脱しないキー
     excluded-positions = <
-        19 // - 左クリック
-        20 // Z Shift
-        30 // Control
-        32 // Alt
+        17 18 19 // Scroll/right-click combos and left click
+        20 29    // Shift hold-taps
+        30 31 32 // Tab / Control / Alt
     >;
 };
 
@@ -59,7 +58,7 @@
         // input-processors = <&mouse_runtime_input_processor>;
         input-processors = <
             &mouse_runtime_input_processor
-            &zip_temp_layer 8 100000 // AMLレイヤー、タイムアウト時間
+            &zip_temp_layer 9 10000 // Mouse=9; keep aligned with keymap L_MOUSE (10 seconds)
             &zip_xy_scaler 2 3 // カーソル移動量2/3倍
             &zip_xy_transform INPUT_TRANSFORM_X_INVERT // カーソルの移動方向調整
             &zip_xy_transform INPUT_TRANSFORM_Y_INVERT // カーソルの移動方向調整
@@ -69,7 +68,7 @@
 
 &trackball_listener {
     scroller {
-        layers = <7>; // スクロールレイヤー
+        layers = <8>; // Scroll=8; keep aligned with keymap L_SCROLL
         input-processors = <
             // &scroll_runtime_input_processor
             &zip_xy_to_scroll_mapper
