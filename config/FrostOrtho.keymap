@@ -9,13 +9,14 @@
 #define L_BASE_MAC 0
 #define L_BASE_WIN 1
 #define L_BASE_ONISHI 2
-#define L_SYMBOL 3
-#define L_NUMBER 4
-#define L_MOVE_MAC 5
-#define L_MOVE_WIN 6
-#define L_SETTING 7
-#define L_SCROLL 8
-#define L_MOUSE 9
+#define L_BASE_ONISHI_WIN 3
+#define L_SYMBOL 4
+#define L_NUMBER 5
+#define L_MOVE_MAC 6
+#define L_MOVE_WIN 7
+#define L_SETTING 8
+#define L_SCROLL 9
+#define L_MOUSE 10
 
 &mt {
     flavor = "balanced";
@@ -33,7 +34,7 @@
 &mkp_input_listener { input-processors = <&zip_temp_layer L_MOUSE 10000>; };
 
 // Physical trackball routing is defined in FrostOrtho_R.overlay.
-// Keep its Mouse=9 and Scroll=8 aligned with L_MOUSE and L_SCROLL here.
+// Keep its Mouse=10 and Scroll=9 aligned with L_MOUSE and L_SCROLL here.
 
 // Position 19 is this keymap's left button; 17+18 / 18+19 are combos.
 // Keep AML active while clicking/dragging or holding the combo keys.
@@ -90,6 +91,20 @@
                 <&to L_BASE_ONISHI>;
 
             label = "ONISHI_MAC";
+        };
+
+        // Select Bluetooth profile 1 (Windows) and the Onishi base.
+        onishi_win: onishi_win {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&to L_BASE_MAC>,
+                <&macro_wait_time 200>,
+                <&bt BT_SEL 1>,
+                <&macro_wait_time 500>,
+                <&to L_BASE_ONISHI_WIN>;
+
+            label = "ONISHI_WIN";
         };
 
         bt1: bt1 {
@@ -195,6 +210,17 @@
             sensor-bindings = <&rsr_vol &rsr_trans>;
         };
 
+        Onishi_Win {
+            bindings = <
+&kp Q  &kp L  &kp U  &kp COMMA  &kp PERIOD  &kp F  &kp W  &kp R  &kp Y  &kp P
+&mt LCTRL E  &kp I  &kp A  &kp O  &kp MINUS  &kp K  &kp T  &kp N  &kp S  &mt RCTRL H
+&mt LEFT_SHIFT Z  &kp X  &kp C  &kp V  &kp SEMICOLON  &kp G  &kp D  &kp M  &kp J  &mt RIGHT_SHIFT B
+&kp TAB           &kp LEFT_CONTROL  &kp LEFT_ALT  &mt LEFT_COMMAND LANGUAGE_2  &lt L_SYMBOL SPACE  &lt L_NUMBER BACKSPACE      &lt L_MOVE_WIN ENTER  &mt RIGHT_COMMAND LANGUAGE_1  &trans     &kp C_VOLUME_DOWN  &kp C_VOLUME_UP
+            >;
+
+            sensor-bindings = <&rsr_vol &rsr_trans>;
+        };
+
         Symbol {
             bindings = <
 &kp EXCLAMATION  &kp AT_SIGN  &kp HASH  &kp DOLLAR  &kp PERCENT                                  &kp CARET  &kp AMPERSAND  &kp ASTERISK      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
@@ -240,9 +266,9 @@
         };
 
         Setting {
-            // Top-left: Mac Onishi / Mac QWERTY (both select BT profile 0).
+            // Top-left: Mac Onishi / Mac QWERTY / Win Onishi / Win QWERTY.
             bindings = <
-&onishi_mac  &bt0  &trans  &trans  &trans              &bt0            &bt1    &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+&onishi_mac  &bt0  &onishi_win  &bt1  &trans              &bt0            &bt1    &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
 &trans  &trans  &trans  &trans  &trans              &trans          &trans  &trans        &trans        &trans
 &trans  &trans  &trans  &trans  &trans              &studio_unlock  &trans  &trans        &trans        &bt BT_CLR
 &trans  &trans  &trans  &trans  &trans  &trans      &trans          &trans  &trans        &trans        &bt BT_CLR_ALL
