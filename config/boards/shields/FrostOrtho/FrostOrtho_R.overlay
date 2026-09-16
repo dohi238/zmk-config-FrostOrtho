@@ -58,7 +58,7 @@
         // input-processors = <&mouse_runtime_input_processor>;
         input-processors = <
             &mouse_runtime_input_processor
-            &zip_temp_layer 9 10000 // Mouse=9; keep aligned with keymap L_MOUSE (10 seconds)
+            &zip_temp_layer 10 10000 // Mouse=10; keep aligned with keymap L_MOUSE (10 seconds)
             &zip_xy_scaler 2 3 // カーソル移動量2/3倍
             &zip_xy_transform INPUT_TRANSFORM_X_INVERT // カーソルの移動方向調整
             &zip_xy_transform INPUT_TRANSFORM_Y_INVERT // カーソルの移動方向調整
@@ -68,7 +68,7 @@
 
 &trackball_listener {
     scroller {
-        layers = <8>; // Scroll=8; keep aligned with keymap L_SCROLL
+        layers = <9>; // Scroll=9; keep aligned with keymap L_SCROLL
         input-processors = <
             // &scroll_runtime_input_processor
             &zip_xy_to_scroll_mapper
