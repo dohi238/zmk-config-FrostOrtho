@@ -24,7 +24,7 @@
     require-prior-idle-ms = <400>;
     // AMLから離脱しないキー
     excluded-positions = <
-        17 18 19 // Scroll/right-click combos and left click
+        12 13 17 18 19 // Scroll/right-click combos and left click
         20 29    // Shift hold-taps
         30 31 32 // Tab / Control / Alt
     >;
