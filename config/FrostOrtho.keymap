@@ -39,7 +39,7 @@
 // Position 19 is this keymap's left button; 17+18 / 18+19 are combos.
 // Keep AML active while clicking/dragging or holding the combo keys.
 
-&zip_temp_layer { excluded-positions = <17 18 19 20 29 30 31 32>; };
+&zip_temp_layer { excluded-positions = <12 13 17 18 19 20 29 30 31 32>; };
 
 / {
     combos {
